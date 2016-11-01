@@ -13,7 +13,6 @@ class Client
 		if($redis->connect($config['host'],$config['port'],$config['timeout']))
 		{
 			$this->redis = $redis;
-			return $this->redis;
 		}
 		else
 		{
