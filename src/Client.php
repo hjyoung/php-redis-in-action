@@ -20,6 +20,14 @@ class Client
         }
     }
 
+    /**
+     * @return Redis
+     */
+    public function pipeline()
+    {
+        return $this->redis->multi();
+    }
+
     public function __call($name,$args)
     {
         switch (count($args))
