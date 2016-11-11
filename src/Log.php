@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Log
+ * 5.1.1,5.1.2
+ */
 
 class Log
 {
@@ -8,6 +12,13 @@ class Log
         $this->client = $client;
     }
 
+    /**
+     * 最近日志
+     * @param $name
+     * @param $message
+     * @param string $severity
+     * @param null $pipe
+     */
     public function recent($name,$message,$severity = "info",$pipe = null)
     {
         $key = "recent:".$name.":".$severity;
@@ -20,6 +31,13 @@ class Log
     }
 
 
+    /**
+     * 常见日志
+     * @param $name
+     * @param $message
+     * @param string $severity
+     * @param int $timeout
+     */
     public function common($name,$message,$severity = "info",$timeout = 5)
     {
         $key = "common:".$name.":".$severity;
